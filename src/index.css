@@ -8,8 +8,6 @@ html {
   overflow-x: hidden;
 }
 
-.wrap {}
-
 .case {
   overflow: hidden;
   background-color: #fff;
@@ -26,7 +24,6 @@ html {
 }
 
 .title {
-  border: lightcoral 1px solid;
   position: relative;
   width: 397px;
   height: 211px;
@@ -71,7 +68,6 @@ h1 {
 }
 
 .wave {
-  border: lightcoral 1px solid;
   display: block;
   position: relative;
   width: calc(100vw + 370px);
@@ -101,7 +97,6 @@ h1 {
   margin-right: 0;
   /* margin-top: 70px; */
   top: 7vw;
-  border: lightcoral 1px solid;
   position: relative;
   height: auto;
   max-height: 580px;
@@ -197,7 +192,14 @@ h2 {
   padding-top: 44px;
   top: 40px;
   left: 87px;
+  width: 576px;
+  height: 313px;
   position: absolute;
+}
+
+.mac__slider img {
+  width: 100%;
+  height: 100%;
 }
 
 .slider__buttons {
@@ -207,7 +209,7 @@ h2 {
   padding: 29px 68px 10px;
 }
 
-.slider__buttons span {
+.slider__buttons a {
   font-style: normal;
   font-weight: 500;
   font-size: 36px;
@@ -217,10 +219,15 @@ h2 {
 
 .iphone {
   padding-top: 53px;
-  /* border: lightcoral 1px solid; */
+  width: 447px;
+  height: 677px;
   display: flex;
   justify-content: center;
 
+}
+.iphone img {
+  width: 100%;
+  height: 100%;
 }
 
 .vertical {
@@ -235,7 +242,7 @@ h2 {
   width: 285px;
   height: 623px;
   position: absolute;
-  padding-top: 19px;
+  padding-top: 18px;
   z-index: 0;
 }
 
@@ -302,15 +309,54 @@ h2 {
   flex-wrap: wrap;
   flex-direction: column;
 
+  width: 529px;
+  height: 392px;
   padding-bottom: 48px;
   left: -10px;
   margin-bottom: 40px;
-  /* margin: auto; <1200px */
+
+  perspective: 1000px;
 }
 
 .quest1__selector img {
-  width: 529px;
-  height: 392px;
+  display: block;
+  position: absolute;
+  width: 100%;
+  transition: 1s;
+  backface-visibility: hidden;
+}
+
+.card__about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 1s;
+  backface-visibility: hidden;
+  border-radius: 10px;
+
+  box-sizing: border-box;
+  margin-top: 9px;
+  padding: 40px 40px;
+  width: 96%;
+  height: 86%;
+
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 16px;
+  color: #805240;
+  background-color: #D9CCC6;
+  white-space: pre-line;
+  transform: rotateY(180deg);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+
+}
+
+.quest1__selector:hover img {
+  transform: rotateY(180deg);
+}
+
+.quest1__selector:hover .card__about {
+  transform: rotateY(360deg);
 }
 
 .quest1__selector span {
@@ -392,6 +438,74 @@ h2 {
   font-style: normal;
   font-weight: normal;
   font-size: 20px;
+}
+
+
+
+.contacts {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  color: #ffffff;
+  margin-bottom: 70px;
+}
+
+.line__contacts {
+  box-sizing: border-box;
+  height: 10px;
+  width: 80%;
+  background: url(./img/Line_11.svg) center center no-repeat;
+  /* background-color: #fff; */
+}
+
+.contacts__box {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  height: 79px;
+  width: 100%;
+  padding-top: 49px;
+}
+
+.contact__title {
+  display: flex;
+  align-items: flex-start;
+  line-height: 84px;
+  height: 69px;
+}
+
+.contact__title h2 {
+  vertical-align: top;
+}
+
+.number {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  flex-wrap: wrap;
+
+  height: inherit;
+}
+
+.number a {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 28px;
+  line-height: 33px;
+
+  color: #fff;
+  text-decoration: none;
+}
+
+.social {
+  display: flex;
+  justify-content: space-between;
+
+  width: 291px;
 }
 
 /* qweqqwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww */

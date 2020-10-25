@@ -1,13 +1,13 @@
 import React from 'react';
-import Figma from './img/Figma.png';
-import Photoshop from './img/photoshop.png';
-import VectorG from './img/vector_graphics.png';
-import ReactJS from './img/react.png';
-import JavaS from './img/js.png';
-import Html5 from './img/html5.png';
-import NodeJS from './img/nodejs.png';
-import Form from './img/send_forms.png';
-import Database from './img/database.png';
+import Figma from '../img/Figma.png';
+import Photoshop from '../img/photoshop.png';
+import VectorG from '../img/vector_graphics.png';
+import ReactJS from '../img/react.png';
+import JavaS from '../img/js.png';
+import Html5 from '../img/html5.png';
+import NodeJS from '../img/nodejs.png';
+import Form from '../img/send_forms.png';
+import Database from '../img/database.png';
 
 
 const Instruments = () => (

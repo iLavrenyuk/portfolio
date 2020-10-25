@@ -1,0 +1,74 @@
+{
+	"sites": [
+		{
+			"title": "anastasia-fitline.com",
+			"url": "https://anastasia-fitline.com/",
+			"screenMin": "../img/slider/anastasiaMin.PNG",
+			"screenMax": "../img/slider/anastasiaMax.jpg",
+			"id": 0
+		},
+		{
+			"title": "anastasia/company",
+			"url": "https://anastasia-fitline.com/pm",
+			"screenMin": "../img/slider/companyMin.PNG",
+			"screenMax": "../img/slider/companyMax.jpg",
+			"id": 1
+		},
+		{
+			"title": "anastasia/product",
+			"url": "https://anastasia-fitline.com/product",
+			"screenMin": "../img/slider/productMin.PNG",
+			"screenMax": "../img/slider/productMax.jpg",
+			"id": 2
+		},
+		{
+			"title": "coffee.ilavrenyuk",
+			"url": "https://coffee.ilavrenyuk.info/",
+			"screenMin": "../img/slider/coffeeMin.PNG",
+			"screenMax": "../img/slider/coffeeMax.jpg",
+			"id": 3
+		},
+		{
+			"title": "premiumstore.com.ua",
+			"url": "https://premiumstore.com.ua/",
+			"screenMin": "../img/slider/PM_min.png",
+			"screenMax": "../img/slider/PM_max.png",
+			"id": 4
+		},
+		{
+			"title": "spacex.ilavrenyuk",
+			"url": "https://spacex.ilavrenyuk.info/",
+			"screenMin": "../img/slider/spacexMin.PNG",
+			"screenMax": "../img/slider/spacexMax.jpg",
+			"id": 5
+		},
+		{
+			"title": "window.ilavrenyuk",
+			"url": "https://window.ilavrenyuk.info/",
+			"screenMin": "../img/slider/windowMin.PNG",
+			"screenMax": "../img/slider/windowMax.jpg",
+			"id": 6
+		},
+		{
+			"title": "yoga.ilavrenyuk",
+			"url": "https://yoga.ilavrenyuk.info/",
+			"screenMin": "../img/slider/yogaMin.PNG",
+			"screenMax": "../img/slider/yogaMax.jpg",
+			"id": 7
+		},
+		{
+			"title": "GameOfThrones.ilavrenyuk",
+			"url": "https://gotapp.ilavrenyuk.info/",
+			"screenMin": "../img/slider/gotAppMin.PNG",
+			"screenMax": "../img/slider/gotAppMax.jpg",
+			"id": 8
+		},
+		{
+			"title": "old.ilavrenyuk",
+			"url": "https://old.ilavrenyuk.info/",
+			"screenMin": "../img/slider/portfolioMin.PNG",
+			"screenMax": "../img/slider/portfolioMax.jpg",
+			"id": 9
+		}
+	]
+}

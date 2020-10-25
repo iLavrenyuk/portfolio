@@ -1,6 +1,6 @@
 import React from 'react';
-import Line from './img/Line_4.svg'
-import Photo from './img/lavr.png';
+import Line from '../img/Line_4.svg'
+import Photo from '../img/lavr.png';
 
 const Title = () => (
   <>

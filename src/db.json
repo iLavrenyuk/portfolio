@@ -1,0 +1,74 @@
+{
+	"sites": [
+		{
+			"title": "history anastasii",
+			"url": "https://anastasia-fitline.com/",
+			"screenMin": "../img/slider/anastasiaMin.PNG",
+			"screenMax": "../img/slider/anastasiaMax.jpg",
+			"id": 0
+		},
+		{
+			"title": "about company 'PM'",
+			"url": "https://anastasia-fitline.com/pm",
+			"screenMin": "../img/slider/companyMin.PNG",
+			"screenMax": "../img/slider/companyMax.jpg",
+			"id": 1
+		},
+		{
+			"title": "fitline product",
+			"url": "https://anastasia-fitline.com/product",
+			"screenMin": "../img/slider/productMin.PNG",
+			"screenMax": "../img/slider/productMax.jpg",
+			"id": 2
+		},
+		{
+			"title": "about coffee",
+			"url": "https://coffee.ilavrenyuk.info/",
+			"screenMin": "../img/slider/coffeeMin.PNG",
+			"screenMax": "../img/slider/coffeeMax.jpg",
+			"id": 3
+		},
+		{
+			"title": "PremiumStore",
+			"url": "https://premiumstore.com.ua/",
+			"screenMin": "../img/slider/PM_min.png",
+			"screenMax": "../img/slider/PM_max.png",
+			"id": 4
+		},
+		{
+			"title": "SpaceX",
+			"url": "https://spacex.ilavrenyuk.info/",
+			"screenMin": "../img/slider/spacexMax.jpg",
+			"screenMax": "../img/slider/spacexMin.PNG",
+			"id": 5
+		},
+		{
+			"title": "window shop",
+			"url": "https://window.ilavrenyuk.info/",
+			"screenMin": "../img/slider/windowMax.jpg",
+			"screenMax": "../img/slider/windowMin.PNG",
+			"id": 6
+		},
+		{
+			"title": "yoga travel",
+			"url": "https://yoga.ilavrenyuk.info/",
+			"screenMin": "../img/slider/yogaMin.PNG",
+			"screenMax": "../img/slider/yogaMax.jpg",
+			"id": 7
+		},
+		{
+			"title": "Game Of Thrones",
+			"url": "https://gotapp.ilavrenyuk.info/",
+			"screenMin": "../img/slider/gotAppMin.PNG",
+			"screenMax": "../img/slider/gotAppMax.jpg",
+			"id": 8
+		},
+		{
+			"title": "My old portfolio",
+			"url": "https://old.ilavrenyuk.info/",
+			"screenMin": "../img/slider/portfolioMin.PNG",
+			"screenMax": "../img/slider/portfolioMax.jpg",
+			"id": 9
+		}
+	]
+}
