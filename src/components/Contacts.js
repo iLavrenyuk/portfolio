@@ -6,7 +6,7 @@ import WhatsApp from '../img/social__svg/whats_app.svg';
 
 const Contacts = () => (
   <>
-    <div className="block__color">
+    <div id={"contacts"} className="block__color">
       <div className="container__3">
         <div className="contacts">
           <div className="line__contacts" />

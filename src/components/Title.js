@@ -20,13 +20,6 @@ const Title = () => (
       <div className="wave">
       </div>
     </div>
-    {/* <div className="box">
-      <div className="first">1</div>
-      <span>2</span>
-      <span>3</span>
-      <span>4</span>
-    </div> */}
-
   </>
 );
 

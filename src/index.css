@@ -1,11 +1,106 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:300,400,500,600,700&subset=latin,cyrillic);
 
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
 body,
 html {
   font-family: -apple-system, BlinkMacSystemFont, 'Roboto', Arial, Helvetica, sans-serif;
-  font-size: 10px;
+  font-size: 16px;
   box-sizing: border-box;
   overflow-x: hidden;
+  max-width: 100%;
 }
 
 .case {
@@ -100,25 +195,16 @@ h1 {
   position: relative;
   height: auto;
   max-height: 580px;
-  width: 67rem;
+  width: auto;
   z-index: 0;
 
 }
 
-@media screen and (max-width: 1200px) {
+/* @media screen and (max-width: 1200px) {
   .container {
     max-width: 900px;
   }
 
-  .line__circle {
-    min-width: 482px;
-    width: 50vw;
-  }
-
-  .line__circle img {
-    min-width: 482px;
-    width: 50vw;
-  }
 }
 
 @media screen and (max-width: 640px) {
@@ -127,13 +213,8 @@ h1 {
   }
 }
 
-@media screen and (max-width: 589px) {
+@media screen and (max-width: 589px) {} */
 
-  .line__circle img {
-    min-width: 482px;
-    width: 115vw;
-  }
-}
 
 
 .block__color {
@@ -206,7 +287,19 @@ h2 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 29px 68px 10px;
+  padding: 29px 48px 10px;
+}
+
+.slider__buttons img {
+  transition: 0.3s;
+  cursor: pointer;
+  padding: 0 10px 0;
+}
+
+
+.slider__buttons img:hover {
+  transition: 0.3s;
+  padding: 0 0px 0;
 }
 
 .slider__buttons a {
@@ -225,6 +318,7 @@ h2 {
   justify-content: center;
 
 }
+
 .iphone img {
   width: 100%;
   height: 100%;
@@ -294,7 +388,6 @@ h2 {
 }
 
 .calc {
-  padding-top: 74px;
   position: relative;
   display: flex;
   justify-content: space-between;
@@ -309,8 +402,8 @@ h2 {
   flex-wrap: wrap;
   flex-direction: column;
 
-  width: 529px;
-  height: 392px;
+  width: 441px;
+  height: 312px;
   padding-bottom: 48px;
   left: -10px;
   margin-bottom: 40px;
@@ -359,26 +452,144 @@ h2 {
   transform: rotateY(360deg);
 }
 
-.quest1__selector span {
+.checkbox {
+  display: none;
+}
+
+.quest1__selector label {
   position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
 
-  width: 514px;
-  height: 58px;
+  width: 261px;
+  height: 48px;
   bottom: 0;
   font-weight: 300;
-  font-size: 24px;
+  font-size: 22px;
   line-height: 28px;
 
   text-align: center;
   color: #805240;
+  cursor: pointer;
 
   border: 1px solid #805240;
   box-sizing: border-box;
   border-radius: 5px;
 }
+
+.checkbox__label {
+  transition: 0.3s;
+}
+
+.checkbox:checked+.checkbox__label {
+  background: #805240;
+  color: #ffffff;
+}
+
+/* /calculate2 */
+
+.header {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap-reverse;
+  align-items: flex-end;
+  height: 154px;
+  white-space: pre-line;
+}
+
+.calc2__quest {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  white-space: pre-line;
+
+  margin-top: 40px;
+  margin-left: calc(4vw - 20px);
+}
+
+.calc2__quest:nth-last-child(1) {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.calc2__quest span {
+  font-size: 28px;
+  line-height: 33px;
+  color: #805240;
+}
+
+.costs {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.total {
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 37px;
+  color: #FFFFFF;
+
+  padding: 5px 15px;
+  box-sizing: border-box;
+  background: #805240;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.choose__base {
+  padding-right: 10px;
+  font-weight: bold;
+  font-size: 28px;
+  line-height: 33px;
+
+  color: #805240;
+}
+
+.current {
+  padding-right: 10px;
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 33px;
+  text-align: right;
+  text-decoration-line: underline;
+  color: #805240;
+}
+
+/* Calculate 3 */
+
+.calc2__quest span p {
+  margin-top: 12px;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 21px;
+}
+
+/* Calculator Router */
+.step {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  color: #805240;
+  margin-bottom: 20px;
+}
+
+.container__router {
+  position: relative;
+  margin: 30px auto 0;
+  max-width: 1200px;
+  z-index: 1;
+}
+
+.MuiStepIcon-active {
+  color: #805240;
+}
+
+/* Block_4 */
 
 .wave__3 {
   margin-top: 35px;

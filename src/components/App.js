@@ -3,12 +3,13 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Title from './Title';
 import Projects from './Projects';
 import Calculate1 from './Calculate1';
+import Calculate2 from './Calculate2';
+import Calculate3 from './Calculate3';
 import Instruments from './Instruments';
 import Contacts from './Contacts';
+import Stepper from './Stepper';
 
 
-const Calculate2 = () => <>Calculate 2</>;
-const Calculate3 = () => <>Calculate 3</>;
 const Calculate4 = () => <>Calculate 4</>;
 const Result = () => <>Result</>;
 
@@ -27,6 +28,7 @@ class App extends React.Component {
             <Route exact path="/calculate4" component={Calculate4} />
             <Route exact path="/result" component={Result} />
           </Switch>
+          <Stepper />
         </Router>
         <Instruments />
         <Contacts />
