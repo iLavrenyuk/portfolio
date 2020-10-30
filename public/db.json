@@ -69,6 +69,13 @@
 			"screenMin": "../img/slider/portfolioMin.PNG",
 			"screenMax": "../img/slider/portfolioMax.jpg",
 			"id": 9
+		},
+		{
+			"title": "minecraft-react",
+			"url": "https://minecraft.ilavrenyuk.info/",
+			"screenMin": "../img/slider/minecraftMin.png",
+			"screenMax": "../img/slider/minecraftMax.jpg",
+			"id": 10
 		}
 	]
 }

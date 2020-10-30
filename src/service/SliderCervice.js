@@ -1,7 +1,7 @@
 export default class SliderCervice {
 
   async getResourse() {
-    const res = await fetch('http://localhost:3000/db.json')
+    const res = await fetch('db.json')
 
     if (!res.ok) {
       throw new Error(`Could not fetch` +

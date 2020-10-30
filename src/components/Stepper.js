@@ -48,11 +48,11 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function getSteps() {
-  return ['Choose the basis', 'Product. Form', 'Count pages. Design', 'Content. Bots'];
+  return ['Choose the basis', 'Product. Form', 'Count pages. Design', 'Content. Storage'];
 }
 const route = ['/', '/calculate2', '/calculate3', '/calculate4', 'result'];
 
-export default function HorizontalLabelPositionBelowStepper() {
+export default function HorizontalStepper() {
   const classes = useStyles();
   const [activeStep, setActiveStep] = React.useState(0);
   const steps = getSteps();
@@ -92,7 +92,7 @@ export default function HorizontalLabelPositionBelowStepper() {
       {activeStep === steps.length ? (
         <div>
           <Button className={classes.backButton} variant="contained" onClick={handleReset}>
-            <Link to={`/`}>Reset</Link>
+            <Link to={`/`}>Repeat</Link>
           </Button>
         </div>
       ) : (

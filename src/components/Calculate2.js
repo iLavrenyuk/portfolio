@@ -3,6 +3,7 @@ import Tilda from '../img/tilda_cart.png';
 import Form from '../img/feedback_form.jpg';
 import Switch from '@material-ui/core/Switch';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
+import Button from '@material-ui/core/Button';
 
 const theme = createMuiTheme({
   palette: {
@@ -18,7 +19,7 @@ const theme = createMuiTheme({
 export function Calculate2() {
 
   const [state, setState] = React.useState({
-    checkedB: false,
+    product: true,
   });
 
   const handleChange = (event) => {
@@ -26,26 +27,33 @@ export function Calculate2() {
   };
   return (
     <>
+
       <div className="container__3">
-        <div className="header">
-          <div className="calc2__quest">
-            <span>You are selling a product?</span>
-            <ThemeProvider theme={theme}>
+        <ThemeProvider theme={theme}>
+          <div className="header">
+            <div className="calc2__quest">
+
+              <span>You are selling a product?</span>
               <Switch
-                checked={state.checkedB}
+                checked={state.product}
                 onChange={handleChange}
                 color="primary"
-                name="checkedB"
-                inputProps={{ 'aria-label': 'primary checkbox' }}
-              /></ThemeProvider>
+                name="product"
+                inputProps={{ 'aria-label': 'primary checkbox' }} />
+            </div>
+            
+            <div className="costs">
+              <div className="choose__base">
+                <ThemeProvider theme={theme}>
+                  <Button variant="contained" color="primary" >Tilda</Button>
+                  <Button variant="contained" style={{marginLeft: "6px"}} disabled>Code</Button>
+                </ThemeProvider>
+              </div>
+              <div className="total">Total:{`0000`}</div>
+              <div className="current">+0000</div>
+            </div>
           </div>
-          <div className="costs">
-            <div className="total">Total:{`0000`}</div>
-            <div className="choose__base">Tilda/Code</div>
-            <div className="current">+0000</div>
-          </div>
-        </div>
-
+        </ThemeProvider>
         <div className="calc">
           <div className="quest1__selector">
             <img alt="" src={Tilda} />
@@ -60,8 +68,8 @@ export function Calculate2() {
               \n - monthly(11$) / yearly(105$) subscription
             `}</p>
             </div>
-            <input type="checkbox" className="checkbox" id="checkbox1" />
-            <label htmlFor="checkbox1" className="checkbox__label" >Feedback form +30$</label>
+            <input type="checkbox" className="checkbox" id="checkbox__Feedback" name="checkbox__Feedback" />
+            <label htmlFor="checkbox__Feedback" className="checkbox__label" >Feedback form +30$</label>
           </div>
           <div className="quest1__selector">
             <img alt="" src={Form} />
@@ -76,11 +84,12 @@ export function Calculate2() {
               \n - knowledge to edit
             `}</p>
             </div>
-            <input type="checkbox" className="checkbox" id="checkbox2" />
-            <label htmlFor="checkbox2" className="checkbox__label" >Shopping cart +60$</label>
+            <input type="checkbox" className="checkbox" id="checkbox__cart" name="checkbox__cart" />
+            <label htmlFor="checkbox__cart" className="checkbox__label" >Shopping cart +60$</label>
           </div>
         </div>
       </div>
+
     </>
   );
 }

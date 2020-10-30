@@ -6,6 +6,8 @@ import FormControl from '@material-ui/core/FormControl';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import Select from '@material-ui/core/Select';
 import { makeStyles } from '@material-ui/core/styles';
+import Button from '@material-ui/core/Button';
+
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -14,7 +16,6 @@ const useStyles = makeStyles(() => ({
     marginRight: "40px"
   },
   select: {
-    marginLeft: "40px",
     width: '28ch',
   }
 }));
@@ -25,7 +26,7 @@ const theme = createMuiTheme({
       light: '#D9CCC6',
       main: '#805240',
       dark: '#59392d',
-      contrastText: '#805240',
+      contrastText: '#ffffff',
     }
   },
 });
@@ -45,7 +46,7 @@ export function Calculate3() {
 
           <div className="calc2__quest">
             <span>{`How many pages?`}
-              <p>{`Page price + 25$ \n Apart from the first page`}</p>
+              <p>{`Page price + 25$\n Apart from the first page`}</p>
             </span>
             <TextField className={styles.root}
               id="outlined-number"
@@ -55,16 +56,19 @@ export function Calculate3() {
           </div>
 
           <div className="costs">
+            <div className="choose__base">
+              <Button variant="contained" color="primary" >Tilda</Button>
+              <Button variant="contained" style={{ marginLeft: "6px" }} disabled>Code</Button>
+            </div>
             <div className="total">Total:{`0000`}</div>
-            <div className="choose__base">Tilda/Code</div>
             <div className="current">+0000</div>
           </div>
         </div>
 
         <div className="calc">
           <div className="calc2__quest">
-            <span>{`How many pages \nare there in total?`}
-              <p>{`How many of them have the same \nstructure? For example products...`}</p>
+            <span>{`How many pages\nare there in total?`}
+              <p>{`How many of them have the same\nstructure? For example products...`}</p>
             </span>
             <TextField className={styles.root}
               id="outlined-number"
@@ -73,7 +77,7 @@ export function Calculate3() {
               variant="outlined" />
           </div>
 
-          <div className="calc2__quest">
+          <div className="calc2__quest calc__column">
             <span>Design
             </span>
             <FormControl variant="outlined" className={styles.select}>
