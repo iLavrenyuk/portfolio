@@ -34,7 +34,7 @@ export default function Result() {
             <div className="calc result__content">
               <div className="">Tilda:
             <span>{`200$`}</span>
-                <p className="result__small">{`+подписка по\n желанию 130$`}</p>
+                <p className="result__small">{`+subscription 130$`}</p>
               </div>
               <div>Code:<span>{`300$`}</span></div>
             </div>
@@ -60,25 +60,27 @@ export default function Result() {
                   label="Phone"
                   variant="outlined"
                 />
-                <Button variant="contained" color="primary" width="" style={{ marginTop: "6px" }} >SEND</Button>
+                <ThemeProvider theme={theme}>
+                  <Button variant="contained" color="primary" width="" style={{ marginTop: "6px" }} >SEND</Button>
+                </ThemeProvider>
               </div>
               {/* </Form> */}
             </div>
             <div className="calc__column">
               <div className="about__me">
-                <span className="result__content isntruments">Обо мне</span>
+                <span className="result__content isntruments">About me</span>
                 <p className="result__small white">
-                  {`Меня зовут Илья Лавренюк, мне 23 года.
-              Имею успешный опыт продаж и бизнеса (3 года).  
-              Стараюсь быть лучшим в свем деле.
-              Дисциплинированный, постоянно обучаюсь.
-              Имею высшее образование.
-              Опыт разрботки сайтов - больше года.`}</p>
+                  {`My name is Ilya Lavrenyuk, I'm 23 years old.
+                  I have successful experience in sales and business (3 years).
+                  I try to be the best in my business.
+                  Disciplined, I am constantly learning.
+                  I have a higher education.
+                  Experience in website development - over a year.`}</p>
               </div>
               <div className="about__front">
-                <span className="result__content">С заботой о вашем бюджете</span>
-                <p className="result__small">{`Напишите, и мы обсудим наиболее выгодный и нужный вариант под вашы задачи.
-            \nТак же можно обсудить более расширенный функционал.`}</p>
+                <span className="result__content">Taking care of your budget</span>
+                <p className="result__small">{`Write, and we will discuss the most profitable and necessary option for your tasks.
+            \nMore advanced features can also be discussed.`}</p>
               </div>
             </div>
           </div>
