@@ -19,18 +19,17 @@ class Calculate1 extends React.Component {
             <h2>CALCULATE</h2>
             <span>Choose the basis of the site</span>
           </div>
-          <div className="calc">
+          <div className="calc calc__img">
             <div className="quest1__selector">
               <img alt="" src={Tilda} />
               <div className="card__about">
-                <p>{`For events, landing pages, information sites
-              \n + ease of editing
-              \n + focus on design
-              \n
-              \n - limited functions
-              \n - dirty code
-              \n - monthly(11$) / yearly(105$) subscription
-            `}</p>
+                <p>{`For events, landing pages, information sites.
+                  + ease of editing
+                  + focus on design
+                  
+                  - limited functions
+                  - dirty code
+                  - monthly(11$) / yearly(105$) subscription`}</p>
               </div>
               <input type="checkbox" className="checkbox" id="checkbox1" />
               <label htmlFor="checkbox1" className="checkbox__label" >CRM Tilda +50$</label>
@@ -38,14 +37,13 @@ class Calculate1 extends React.Component {
             <div className="quest1__selector">
               <img alt="" src={Layout} />
               <div className="card__about">
-                <p>{`Best choice for functional websites
-              \n + load speed (React)
-              \n + focus on efficiency
-              \n + clean code
-              \n + more options
-              \n - need more time
-              \n - knowledge to edit
-            `}</p>
+                <p>{`Best choice for functional websites.
+                + load speed (React)
+                + focus on efficiency
+                + clean code
+                + more options
+                - need more time
+                - knowledge to edit`}</p>
               </div>
               <input type="checkbox" className="checkbox" id="checkbox2" />
               <label htmlFor="checkbox2" className="checkbox__label" >Code layout +100$</label>

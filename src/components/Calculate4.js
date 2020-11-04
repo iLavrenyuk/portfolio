@@ -1,4 +1,4 @@
-import React   from 'react';
+import React from 'react';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import InputLabel from '@material-ui/core/InputLabel';
 import FormControl from '@material-ui/core/FormControl';
@@ -15,7 +15,6 @@ const useStyles = makeStyles(() => ({
     marginRight: "40px"
   },
   select: {
-    marginLeft: '40px',
     width: '28ch',
   },
   switch: {
@@ -37,12 +36,12 @@ const theme = createMuiTheme({
 export function Calculate4() {
   const styles = useStyles();
   const [state, setState] = React.useState({
-    seo:false,
-    hosting:false,
+    seo: false,
+    hosting: false,
   });
 
   const handleChange = (event) => {
-    setState({ ...state, [event.target.name]: event.target.checked});
+    setState({ ...state, [event.target.name]: event.target.checked });
     console.log(event.target.checked);
   };
 
@@ -81,34 +80,36 @@ export function Calculate4() {
               <span>{`Pull to hosting`}
                 <p>{`Buy a domain, hosting and upload\nto the site. Pay per year +30$`}</p>
               </span>
-              <Switch className={styles.switch}
+              <div><Switch className={styles.switch}
                 checked={state.hosting}
                 onChange={handleChange}
                 color="primary"
                 name="hosting"
-                inputProps={{ 'aria-label': 'primary checkbox' }} />
+                inputProps={{ 'aria-label': 'primary checkbox' }} /></div>
             </div>
 
             <div className="calc2__quest">
               <span>Content
               <p>{`Creation of technical\n specifications. Logic,\n materials and text.`}</p>
               </span>
-              <FormControl variant="outlined" className={styles.select}>
-                <InputLabel htmlFor="outlined-age-native-simple">Content</InputLabel>
-                <Select
-                  native
-                  onChange={handleChange}
-                  label="content"
-                  inputProps={{
-                    name: 'content',
-                    id: 'outlined-age-native-simple',
-                  }}>
-                  <option value={0}>Сustomer provide +0$</option>
-                  <option value={25}>We create and planning together +25$</option>
-                  <option value={50}>The customer only approves +50$</option>
-                </Select>
-                <FormHelperText>Price add per page</FormHelperText>
-              </FormControl>
+              <div className="select__box">
+                <FormControl variant="outlined" className={styles.select}>
+                  <InputLabel htmlFor="outlined-age-native-simple">Content</InputLabel>
+                  <Select
+                    native
+                    onChange={handleChange}
+                    label="content"
+                    inputProps={{
+                      name: 'content',
+                      id: 'outlined-age-native-simple',
+                    }}>
+                    <option value={0}>Сustomer provide +0$</option>
+                    <option value={25}>We create and planning together +25$</option>
+                    <option value={50}>The customer only approves +50$</option>
+                  </Select>
+                  <FormHelperText>Price add per page</FormHelperText>
+                </FormControl>
+              </div>
             </div>
           </div>
         </div>

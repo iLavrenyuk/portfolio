@@ -8,8 +8,11 @@ const useStyles = makeStyles(() => ({
   root: {
     width: '35ch',
     marginTop: "20px",
-    marginRight: "40px"
   },
+  btn: {
+    width: '39.5ch',
+    marginTop: "6px",
+  }
 }));
 
 const theme = createMuiTheme({
@@ -42,35 +45,30 @@ export default function Result() {
           <div className="spc-evn">
 
             <div className="name__phone">
-              {/* <Form onSubmit={handlSubmit(onsubmit)}> */}
-              <div>
-                <div className="result__content">For communication</div>
-
-                <TextField
-                  className={styles.root}
-                  required
-                  id="outlined-required"
-                  label="Name"
-                  variant="outlined"
-                />
-                <TextField
-                  className={styles.root}
-                  required
-                  id="outlined-required"
-                  label="Phone"
-                  variant="outlined"
-                />
-                <ThemeProvider theme={theme}>
-                  <Button variant="contained" color="primary" width="" style={{ marginTop: "6px" }} >SEND</Button>
-                </ThemeProvider>
-              </div>
-              {/* </Form> */}
+              <div className="result__content">For communication</div>
+              <TextField
+                className={styles.root}
+                required
+                id="Name"
+                label="Name"
+                variant="outlined"
+              />
+              <TextField
+                className={styles.root}
+                required
+                id="Phone"
+                label="Phone"
+                variant="outlined"
+              />
+              <ThemeProvider theme={theme}>
+                <Button variant="contained" color="primary" className={styles.btn}>SEND</Button>
+              </ThemeProvider>
             </div>
             <div className="calc__column">
               <div className="about__me">
                 <span className="result__content isntruments">About me</span>
                 <p className="result__small white">
-                  {`My name is Ilya Lavrenyuk, I'm 23 years old.
+                  {`My name is Illia Lavrenyuk, I'm 23 years old.
                   I have successful experience in sales and business (3 years).
                   I try to be the best in my business.
                   Disciplined, I am constantly learning.

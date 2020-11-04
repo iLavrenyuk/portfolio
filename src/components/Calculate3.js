@@ -67,8 +67,9 @@ export function Calculate3() {
 
         <div className="calc">
           <div className="calc2__quest">
-            <span>{`How many pages\nare there in total?`}
-              <p>{`How many of them have the same\nstructure? For example products...`}</p>
+            <span>{`How many pages have
+              the same structure?`}
+              <p>{`For example products...`}</p>
             </span>
             <TextField className={styles.root}
               id="outlined-number"
