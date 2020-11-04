@@ -1,4 +1,5 @@
 import React from 'react';
+import { useData } from '../data/DataContext';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import InputLabel from '@material-ui/core/InputLabel';
@@ -11,7 +12,7 @@ import Button from '@material-ui/core/Button';
 
 const useStyles = makeStyles(() => ({
   root: {
-    width: '12ch',
+    width: '8ch',
     marginLeft: "40px",
     marginRight: "40px"
   },
@@ -33,77 +34,89 @@ const theme = createMuiTheme({
 
 export function Calculate3() {
   const styles = useStyles();
-  const [state, setState] = React.useState('55');
+  const { data, setValues } = useData();
 
-  const handleChange = (event) => {
-    setState(event.target.value);
+  const handleValue = (event) => {
+    setValues({ [event.target.name]: event.target.value });
   };
 
   return (
-    <><ThemeProvider theme={theme}>
-      <div className="container__3" style={{ paddingBottom: "40px" }}>
-        <div className="header">
+    <>
+      <ThemeProvider theme={theme}>
+        <div className="container__3" style={{ paddingBottom: "40px" }}>
+          <div className="header">
 
-          <div className="calc2__quest">
-            <span>{`How many pages?`}
-              <p>{`Page price + 25$\n Apart from the first page`}</p>
-            </span>
-            <TextField className={styles.root}
-              id="outlined-number"
-              label="Count"
-              type="number"
-              variant="outlined" />
-          </div>
-
-          <div className="costs">
-            <div className="choose__base">
-              <Button variant="contained" color="primary" >Tilda</Button>
-              <Button variant="contained" style={{ marginLeft: "6px" }} disabled>Code</Button>
+            <div className="calc2__quest">
+              <span>{`How many pages?`}
+                <p>{`Page price + 25$\n Apart from the first page`}</p>
+              </span>
+              <TextField
+                value={data.allPages ? data.allPages : false}
+                name="allPages"
+                className={styles.root}
+                onChange={handleValue}
+                id="outlined-number"
+                label="All"
+                type="number"
+                variant="outlined" />
             </div>
-            <div className="total">Total:{`0000`}</div>
-            <div className="current">+0000</div>
-          </div>
-        </div>
 
-        <div className="calc">
-          <div className="calc2__quest">
-            <span>{`How many pages have
+            <div className="costs">
+              <div className="choose__base">
+                <ThemeProvider theme={theme}>
+                  <Button variant="contained" color="primary" >Tilda</Button>
+                  <Button variant="contained" style={{ marginLeft: "6px" }} disabled>Code</Button>
+                </ThemeProvider>
+              </div>
+              <div className="total">Total:{`0000`}</div>
+              <div className="current">+0000</div>
+            </div>
+          </div>
+
+          <div className="calc">
+            <div className="calc2__quest">
+              <span>{`How many pages have
               the same structure?`}
-              <p>{`For example products...`}</p>
-            </span>
-            <TextField className={styles.root}
-              id="outlined-number"
-              label="Count"
-              type="number"
-              variant="outlined" />
-          </div>
+                <p>{`For example products...
+                Discount for these pages.`}</p>
+              </span>
+              <TextField
+                value={data.discount ? data.discount : false}
+                name="discount"
+                onChange={handleValue}
+                className={styles.root}
+                id="outlined-number"
+                label="Dis."
+                type="number"
+                variant="outlined" />
+            </div>
 
-          <div className="calc2__quest calc__column">
-            <span>Design
+            <div className="calc2__quest calc__column">
+              <span>Design
             </span>
-            <FormControl variant="outlined" className={styles.select}>
-              <InputLabel htmlFor="outlined-age-native-simple">Design</InputLabel>
-              <Select
-                native
-                value={state.design}
-                onChange={handleChange}
-                label="design"
-                inputProps={{
-                  name: 'Design',
-                  id: 'outlined-age-native-simple',
-                }}
-              >
-                <option aria-label="None" value="" />
-                <option value={0}>There is a ready-made +0$</option>
-                <option value={25}>Copy from another site +25$</option>
-                <option value={55}>Order prof. design +55$</option>
-              </Select>
-              <FormHelperText>Price add per page</FormHelperText>
-            </FormControl>
+              <FormControl variant="outlined" className={styles.select}>
+                <InputLabel htmlFor="design">Design</InputLabel>
+                <Select
+                  native
+                  value={data.design}
+                  onChange={handleValue}
+                  label="design"
+                  inputProps={{
+                    name: 'design',
+                    id: 'design',
+                  }}
+                >
+                  <option aria-label="None" value="none" />
+                  <option value={0}>There is a ready-made +0$</option>
+                  <option value={25}>Copy from another site +25$</option>
+                  <option value={55}>Order prof. design +55$</option>
+                </Select>
+                <FormHelperText>Price add per page</FormHelperText>
+              </FormControl>
+            </div>
           </div>
         </div>
-      </div>
-    </ThemeProvider>
+      </ThemeProvider>
     </>
   );
 }

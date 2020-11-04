@@ -1,4 +1,5 @@
 import React from 'react';
+import { useData } from '../data/DataContext';
 import Tilda from '../img/tilda_cart.png';
 import Form from '../img/feedback_form.jpg';
 import Switch from '@material-ui/core/Switch';
@@ -18,12 +19,10 @@ const theme = createMuiTheme({
 
 export function Calculate2() {
 
-  const [state, setState] = React.useState({
-    product: true,
-  });
+  const { data, setValues } = useData();
 
-  const handleChange = (event) => {
-    setState({ ...state, [event.target.name]: event.target.checked });
+  const handleChecked = (event) => {
+    setValues({ [event.target.name]: event.target.checked });
   };
   return (
     <>
@@ -34,8 +33,8 @@ export function Calculate2() {
 
               <span>{`You are selling a product?`}</span>
               <Switch
-                checked={state.product}
-                onChange={handleChange}
+                checked={!!data.product}
+                onChange={handleChecked}
                 color="primary"
                 name="product"
                 inputProps={{ 'aria-label': 'primary checkbox' }} />
@@ -60,13 +59,18 @@ export function Calculate2() {
               <p>{`For events, landing pages, information sites.
                 + ease of editing
                 + focus on design
-                
                 - limited functions
                 - dirty code
                 - monthly(11$) / yearly(105$) subscription`}</p>
             </div>
-            <input type="checkbox" className="checkbox" id="checkbox__Feedback" name="checkbox__Feedback" />
-            <label htmlFor="checkbox__Feedback" className="checkbox__label quest2" >Feedback form +30$</label>
+            <input
+              checked={!!data.feedback}
+              onChange={handleChecked}
+              type="checkbox"
+              name="feedback"
+              className="checkbox"
+              id="feedback" />
+            <label htmlFor="feedback" className="checkbox__label quest2" >Feedback form +30$</label>
           </div>
           <div className="quest1__selector">
             <img alt="" src={Form} />
@@ -79,8 +83,14 @@ export function Calculate2() {
                 - need more time
                 - knowledge to edit`}</p>
             </div>
-            <input type="checkbox" className="checkbox" id="checkbox__cart" name="checkbox__cart" />
-            <label htmlFor="checkbox__cart" className="checkbox__label quest2" >Shopping cart +60$</label>
+            <input
+              checked={!!data.cart}
+              onChange={handleChecked}
+              type="checkbox"
+              name="cart"
+              className="checkbox"
+              id="cart" />
+            <label htmlFor="cart" className="checkbox__label quest2" >Shopping cart +60$</label>
           </div>
         </div>
       </div>

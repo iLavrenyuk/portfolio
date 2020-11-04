@@ -729,19 +729,19 @@ h2 {
 
 .instr__column:nth-child(1) h3 {
   background: linear-gradient(180deg, #5E5E5E 0%, #FF0000 100%);
-  -webkit-backgroundclip: text;
+  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .instr__column:nth-child(2) h3 {
   background: linear-gradient(180deg, #0038FF 29.17%, #5EFDD7 100%);
-  -webkit-backgroundclip: text;
+  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .instr__column:nth-child(3) h3 {
   background: linear-gradient(180deg, #474747 0%, #00C52B 100%);
-  -webkit-backgroundclip: text;
+  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 

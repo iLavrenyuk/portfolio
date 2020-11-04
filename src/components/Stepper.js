@@ -88,23 +88,22 @@ export default function HorizontalStepper() {
           ))}
         </Stepper></ThemeProvider>
       </div>
-      <div style={{ marginLeft:"auto", marginRight:"auto"}}>
-      {activeStep === steps.length ? (
-        <div>
-          <Button className={classes.backButton} variant="contained" onClick={handleReset}>
-            <Link to={`/`}>Repeat</Link>
-          </Button>
-        </div>
-      ) : (
+      <div style={{ marginLeft: "auto", marginRight: "auto" }}>
+        {activeStep === steps.length ? (
           <div>
-            <div> 
+            <Button className={classes.backButton} variant="contained" onClick={handleReset}>
+              <Link to={`/`}>Repeat</Link>
+            </Button>
+          </div>
+        ) : (
+            <div>
               <Button
                 variant="contained"
                 disabled={activeStep === 0}
                 onClick={handleBack}
                 className={classes.backButton}>
                 <Link to={backLinc(activeStep)}>
-                    BACK
+                  BACK
                     </Link>
               </Button>
               <StyledButton variant="contained" onClick={handleNext}>
@@ -113,9 +112,8 @@ export default function HorizontalStepper() {
                 </Link>
               </StyledButton>
             </div>
-          </div>
-        )}
-    </div>
+          )}
+      </div>
     </div >
   );
 }

@@ -1,4 +1,5 @@
 import React from 'react';
+import { useData } from '../data/DataContext';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import InputLabel from '@material-ui/core/InputLabel';
 import FormControl from '@material-ui/core/FormControl';
@@ -35,18 +36,18 @@ const theme = createMuiTheme({
 
 export function Calculate4() {
   const styles = useStyles();
-  const [state, setState] = React.useState({
-    seo: false,
-    hosting: false,
-  });
+  const { data, setValues } = useData();
 
-  const handleChange = (event) => {
-    setState({ ...state, [event.target.name]: event.target.checked });
-    console.log(event.target.checked);
+  const handleChecked = (event) => {
+    setValues({ [event.target.name]: event.target.checked });
+  };
+  
+  const handleValue = (event) => {
+    setValues({ [event.target.name]: event.target.value });
   };
 
   return (
-    <>{console.log(`State4:`, state)}
+    <>
       <ThemeProvider theme={theme}>
         <div className="container__3" style={{ paddingBottom: "40px" }}>
           <div className="header">
@@ -55,9 +56,10 @@ export function Calculate4() {
               <span>{`SEO`}
                 <p>{`Setting up indexing for search\nengines, for each page`}</p>
               </span>
-              <Switch className={styles.switch}
-                checked={state.seo}
-                onChange={handleChange}
+              <Switch
+                className={styles.switch}
+                checked={!!data.seo}
+                onChange={handleChecked}
                 color="primary"
                 name="seo"
                 inputProps={{ 'aria-label': 'primary checkbox' }} />
@@ -81,8 +83,8 @@ export function Calculate4() {
                 <p>{`Buy a domain, hosting and upload\nto the site. Pay per year +30$`}</p>
               </span>
               <div><Switch className={styles.switch}
-                checked={state.hosting}
-                onChange={handleChange}
+                checked={!!data.hosting}
+                onChange={handleChecked}
                 color="primary"
                 name="hosting"
                 inputProps={{ 'aria-label': 'primary checkbox' }} /></div>
@@ -94,15 +96,17 @@ export function Calculate4() {
               </span>
               <div className="select__box">
                 <FormControl variant="outlined" className={styles.select}>
-                  <InputLabel htmlFor="outlined-age-native-simple">Content</InputLabel>
+                  <InputLabel htmlFor="content">Content</InputLabel>
                   <Select
                     native
-                    onChange={handleChange}
+                    value={data.content}
+                    onChange={handleValue}
                     label="content"
                     inputProps={{
                       name: 'content',
-                      id: 'outlined-age-native-simple',
+                      id: 'content',
                     }}>
+                    <option aria-label="None" value="none" />
                     <option value={0}>Сustomer provide +0$</option>
                     <option value={25}>We create and planning together +25$</option>
                     <option value={50}>The customer only approves +50$</option>
