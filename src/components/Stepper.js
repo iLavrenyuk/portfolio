@@ -62,7 +62,6 @@ export default function HorizontalStepper() {
   };
 
   const handleBack = () => {
-
     setActiveStep((prevActiveStep) => prevActiveStep - 1);
   };
 

@@ -12,6 +12,7 @@ import Button from '@material-ui/core/Button';
 
 const useStyles = makeStyles(() => ({
   root: {
+    minWidth: '6.5ch',
     width: '8ch',
     marginLeft: "40px",
     marginRight: "40px"
@@ -40,6 +41,29 @@ export function Calculate3() {
     setValues({ [event.target.name]: event.target.value });
   };
 
+  const total = () => {
+    return (
+      (data.siteBase === "code" ? 100 : 50) +
+      (data.feedback ? 30 : 0) + (data.cart ? 60 : 0) +
+      (data.allPages > 0 ? data.allPages - 1 : 0) * 25 +
+      ((data.allPages ? data.allPages : 1) -
+        (data.discount <= data.allPages && data.discount > 0 ? data.discount - 1 : 0)) *
+      (data.design ? data.design : 0) +
+      (data.chatbot ? 120 : 0) +
+      (data.hosting ? 30 : 0) +
+      ((data.content ? data.content : 0) * (data.allPages ? data.allPages : 1))
+    )
+  }
+
+  const calculate = () => {
+    return (
+      (data.allPages > 0 ? data.allPages - 1 : 0) * 25
+      + ((data.allPages ? data.allPages : 1) -
+        (data.discount <= data.allPages && data.discount > 0 ? data.discount - 1 : 0))
+      * (data.design ? data.design : 0)
+    )
+  }
+
   return (
     <>
       <ThemeProvider theme={theme}>
@@ -48,7 +72,8 @@ export function Calculate3() {
 
             <div className="calc2__quest">
               <span>{`How many pages?`}
-                <p>{`Page price + 25$\n Apart from the first page`}</p>
+                <p>{`Page price + 25$\n First page is free!
+                One page - less than 10 blocks`}</p>
               </span>
               <TextField
                 value={data.allPages ? data.allPages : false}
@@ -68,23 +93,22 @@ export function Calculate3() {
                   <Button variant="contained" style={{ marginLeft: "6px" }} disabled>Code</Button>
                 </ThemeProvider>
               </div>
-              <div className="total">Total:{`0000`}</div>
-              <div className="current">+0000</div>
+              <div className="total">Total: {total()}$</div>
+              <div className="current">+{calculate() ? calculate() : "00"}$</div>
             </div>
           </div>
 
           <div className="calc">
             <div className="calc2__quest">
-              <span>{`How many pages have
-              the same structure?`}
-                <p>{`For example products...
-                Discount for these pages.`}</p>
+              <span>{`How many pages have the same structure?`}
+                <p>{`For example many products. Discount starting from the second page.`}</p>
               </span>
               <TextField
                 value={data.discount ? data.discount : false}
                 name="discount"
                 onChange={handleValue}
                 className={styles.root}
+                error={data.discount > data.allPages}
                 id="outlined-number"
                 label="Dis."
                 type="number"
@@ -92,10 +116,9 @@ export function Calculate3() {
             </div>
 
             <div className="calc2__quest calc__column">
-              <span>Design
-            </span>
+              <span>Design</span>
               <FormControl variant="outlined" className={styles.select}>
-                <InputLabel htmlFor="design">Design</InputLabel>
+                <InputLabel htmlFor="design">Layout:</InputLabel>
                 <Select
                   native
                   value={data.design}
@@ -104,11 +127,9 @@ export function Calculate3() {
                   inputProps={{
                     name: 'design',
                     id: 'design',
-                  }}
-                >
-                  <option aria-label="None" value="none" />
-                  <option value={0}>There is a ready-made +0$</option>
-                  <option value={25}>Copy from another site +25$</option>
+                  }}>
+                  <option value={0}>Created already +0$</option>
+                  <option value={25}>From another site +25$</option>
                   <option value={55}>Order prof. design +55$</option>
                 </Select>
                 <FormHelperText>Price add per page</FormHelperText>

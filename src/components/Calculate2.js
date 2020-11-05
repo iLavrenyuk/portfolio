@@ -22,8 +22,30 @@ export function Calculate2() {
   const { data, setValues } = useData();
 
   const handleChecked = (event) => {
-    setValues({ [event.target.name]: event.target.checked });
+    setValues({
+      [event.target.name]: event.target.checked,
+    });
+
   };
+
+  const total = () => {
+    return (
+      (data.siteBase === "code" ? 100 : 50) +
+      (data.feedback ? 30 : 0) + (data.cart ? 60 : 0) +
+      (data.allPages > 0 ? data.allPages - 1 : 0) * 25 +
+      ((data.allPages ? data.allPages : 1) -
+        (data.discount <= data.allPages && data.discount > 0 ? data.discount - 1 : 0)) *
+      (data.design ? data.design : 0) +
+      (data.chatbot ? 120 : 0) +
+      (data.hosting ? 30 : 0) +
+      ((data.content ? data.content : 0) * (data.allPages ? data.allPages : 1))
+    )
+  }
+
+  const calculate = () => {
+    return (data.feedback ? 30 : 0) + (data.cart ? 60 : 0)
+  }
+
   return (
     <>
       <div className="container__3">
@@ -47,14 +69,14 @@ export function Calculate2() {
                   <Button variant="contained" style={{ marginLeft: "6px" }} disabled>Code</Button>
                 </ThemeProvider>
               </div>
-              <div className="total">Total:{`0000`}</div>
-              <div className="current">+0000</div>
+              <div className="total">Total: {total()}$</div>
+              <div className="current">+{calculate() ? calculate() : "00"}$</div>
             </div>
           </div>
         </ThemeProvider>
         <div className="calc calc__img">
           <div className="quest1__selector">
-            <img alt="" src={Tilda} />
+            <img alt="" src={Form} />
             <div className="card__about">
               <p>{`For events, landing pages, information sites.
                 + ease of editing
@@ -73,7 +95,7 @@ export function Calculate2() {
             <label htmlFor="feedback" className="checkbox__label quest2" >Feedback form +30$</label>
           </div>
           <div className="quest1__selector">
-            <img alt="" src={Form} />
+            <img alt="" src={Tilda} />
             <div className="card__about">
               <p>{`Best choice for functional websites.
                 + load speed (React)

@@ -41,10 +41,32 @@ export function Calculate4() {
   const handleChecked = (event) => {
     setValues({ [event.target.name]: event.target.checked });
   };
-  
+
   const handleValue = (event) => {
     setValues({ [event.target.name]: event.target.value });
   };
+
+  const total = () => {
+    return (
+      (data.siteBase === "code" ? 100 : 50) +
+      (data.feedback ? 30 : 0) + (data.cart ? 60 : 0) +
+      (data.allPages > 0 ? data.allPages - 1 : 0) * 25 +
+      ((data.allPages ? data.allPages : 1) -
+        (data.discount <= data.allPages && data.discount > 0 ? data.discount - 1 : 0)) *
+      (data.design ? data.design : 0) +
+      (data.chatbot ? 120 : 0) +
+      (data.hosting ? 30 : 0) +
+      ((data.content ? data.content : 0) * (data.allPages ? data.allPages : 1))
+    )
+  }
+
+  const calculate = () => {
+    return (
+      (data.chatbot ? 120 : 0) +
+      (data.hosting ? 30 : 0) +
+      ((data.content ? data.content : 0) * (data.allPages ? data.allPages : 1))
+    )
+  }
 
   return (
     <>
@@ -53,15 +75,16 @@ export function Calculate4() {
           <div className="header">
 
             <div className="calc2__quest">
-              <span>{`SEO`}
-                <p>{`Setting up indexing for search\nengines, for each page`}</p>
+              <span>{`Chatbot`}
+                <p>{`The best customer retention tool.
+                  Average price 120$`}</p>
               </span>
               <Switch
                 className={styles.switch}
-                checked={!!data.seo}
+                checked={!!data.chatbot}
                 onChange={handleChecked}
                 color="primary"
-                name="seo"
+                name="chatbot"
                 inputProps={{ 'aria-label': 'primary checkbox' }} />
             </div>
 
@@ -72,8 +95,8 @@ export function Calculate4() {
                   <Button variant="contained" style={{ marginLeft: "6px" }} disabled>Code</Button>
                 </ThemeProvider>
               </div>
-              <div className="total">Total:{`0000`}</div>
-              <div className="current">+0000</div>
+              <div className="total">Total: {total()}$</div>
+              <div className="current">+{calculate() ? calculate() : "00"}$</div>
             </div>
           </div>
 
@@ -106,7 +129,6 @@ export function Calculate4() {
                       name: 'content',
                       id: 'content',
                     }}>
-                    <option aria-label="None" value="none" />
                     <option value={0}>Сustomer provide +0$</option>
                     <option value={25}>We create and planning together +25$</option>
                     <option value={50}>The customer only approves +50$</option>

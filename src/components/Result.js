@@ -1,4 +1,5 @@
 import React from 'react';
+import { useData } from '../data/DataContext';
 import TextField from '@material-ui/core/TextField';
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
@@ -28,6 +29,22 @@ const theme = createMuiTheme({
 
 export default function Result() {
   const styles = useStyles();
+  const { data, setValues } = useData();
+
+  const total = () => {
+    return (
+      (data.siteBase === "code" ? 100 : 50) +
+      (data.feedback ? 30 : 0) + (data.cart ? 60 : 0) +
+      (data.allPages > 0 ? data.allPages - 1 : 0) * 25 +
+      ((data.allPages ? data.allPages : 1) -
+        (data.discount <= data.allPages && data.discount > 0 ? data.discount - 1 : 0)) *
+      (data.design ? data.design : 0) +
+      (data.chatbot ? 120 : 0) +
+      (data.hosting ? 30 : 0) +
+      ((data.content ? data.content : 0) * (data.allPages ? data.allPages : 1))
+    )
+  }
+
   return (
     <>
       <ThemeProvider theme={theme}>
@@ -36,10 +53,10 @@ export default function Result() {
             <div className="calc2__quest result">RESULT</div>
             <div className="calc result__content">
               <div className="">Tilda:
-            <span>{`200$`}</span>
+            <span> {total()}$</span>
                 <p className="result__small">{`+subscription 130$`}</p>
               </div>
-              <div>Code:<span>{`300$`}</span></div>
+              <div>Code:<span> {`later`}</span></div>
             </div>
           </div>
           <div className="spc-evn">

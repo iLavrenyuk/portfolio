@@ -330,7 +330,6 @@ h2 {
   height: calc(14vw + 100px);
   left: -160px;
   right: 0;
-  /* top: calc(-10vw - 150px);; */
 
   background: url(./img/between_2-3.svg) bottom left no-repeat;
   background-size: cover;
@@ -346,7 +345,6 @@ h2 {
   padding-top: 50px;
   width: 100%;
   z-index: 0;
-  /* overflow: hidden; */
 }
 
 .container__3 {
@@ -476,6 +474,7 @@ h2 {
   flex-wrap: wrap-reverse;
   align-items: flex-start;
   margin-top: 40px;
+  margin-bottom: 40px;
 }
 
 .calc2__quest {
@@ -491,7 +490,7 @@ h2 {
   font-size: 28px;
   line-height: 33px;
   color: #805240;
-  margin-bottom: 3px;
+  margin-bottom: 10px;
 }
 
 .costs {
@@ -532,7 +531,7 @@ h2 {
 /* Calculate 3 */
 
 .calc2__quest span p {
-  margin-top: 6px;
+  margin-top: 4px;
   font-weight: 300;
   font-size: 16px;
   line-height: 21px;
@@ -880,6 +879,7 @@ h2 {
 
   .calc2__quest span {
     font-size: 22px;
+    line-height: 28px;
   }
 
   .instr__column {
@@ -960,6 +960,10 @@ h2 {
 
   .result__content div {
     margin: 16px 30px;
+  }
+
+  .header {
+    margin-bottom: 0;
   }
 }
 
@@ -1165,6 +1169,7 @@ h2 {
 
   .calc2__quest span {
     font-size: 19px;
+    line-height: 23px;
   }
 
   .select__box {

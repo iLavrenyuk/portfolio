@@ -1,3 +1,4 @@
+import { grey } from '@material-ui/core/colors';
 import React from 'react';
 import { useData } from '../data/DataContext';
 import Tilda from '../img/tilda-publishing.png';
@@ -8,8 +9,11 @@ const Calculate1 = () => {
 
   const { data, setValues } = useData();
 
-  const handleChecked = (data) => {
-    setValues({ siteBase: data.target.name });
+  const handleChecked = (event) => {
+    setValues({
+      siteBase: event.target.name,
+      total: event.target.name === "code" ? 100 : 50
+    });
   }
 
   return (
@@ -52,12 +56,14 @@ const Calculate1 = () => {
             </div>
             <input
               checked={(data.siteBase === "code")}
+              disabled
               onChange={handleChecked}
               type="checkbox"
               name="code"
               className="checkbox"
               id="checkbox2" />
-            <label htmlFor="checkbox2" className="checkbox__label" >Code layout +100$</label>
+            <label htmlFor="checkbox2" className="checkbox__label" 
+            style={{color: "grey", border: "none"}} >Code layout +100$</label>
           </div>
         </div>
       </div>
