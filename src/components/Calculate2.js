@@ -91,8 +91,8 @@ export function Calculate2() {
               type="checkbox"
               name="feedback"
               className="checkbox"
-              id="feedback" />
-            <label htmlFor="feedback" className="checkbox__label quest2" >Feedback form +30$</label>
+              id="checkbox__feedback" />
+            <label htmlFor="checkbox__feedback" className="checkbox__label quest2" >Feedback form +30$</label>
           </div>
           <div className="quest1__selector">
             <img alt="" src={Tilda} />
@@ -111,8 +111,8 @@ export function Calculate2() {
               type="checkbox"
               name="cart"
               className="checkbox"
-              id="cart" />
-            <label htmlFor="cart" className="checkbox__label quest2" >Shopping cart +60$</label>
+              id="checkbox__cart" />
+            <label htmlFor="checkbox__cart" className="checkbox__label quest2" >Shopping cart +60$</label>
           </div>
         </div>
       </div>

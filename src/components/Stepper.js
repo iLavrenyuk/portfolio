@@ -70,10 +70,10 @@ export default function HorizontalStepper() {
   };
 
   const backLinc = (link) => {
-    return route[link ? link - 1 : link];
+    return route()[link ? link - 1 : link];
   }
   const nextLinc = (link) => {
-    return route[link + 1];
+    return route()[link + 1];
   }
 
   return (

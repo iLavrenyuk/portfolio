@@ -1,4 +1,3 @@
-import { grey } from '@material-ui/core/colors';
 import React from 'react';
 import { useData } from '../data/DataContext';
 import Tilda from '../img/tilda-publishing.png';
@@ -40,8 +39,8 @@ const Calculate1 = () => {
               type="checkbox"
               name="tilda"
               className="checkbox"
-              id="checkbox1" />
-            <label htmlFor="checkbox1" className="checkbox__label" >CRM Tilda +50$</label>
+              id="checkbox__tilda" />
+            <label htmlFor="checkbox__tilda" className="checkbox__label" >CRM Tilda +50$</label>
           </div>
           <div className="quest1__selector">
             <img alt="" src={Layout} />
@@ -61,9 +60,12 @@ const Calculate1 = () => {
               type="checkbox"
               name="code"
               className="checkbox"
-              id="checkbox2" />
-            <label htmlFor="checkbox2" className="checkbox__label" 
-            style={{color: "grey", border: "none"}} >Code layout +100$</label>
+              id="checkbox__code" />
+            <label
+              htmlFor="checkbox__code"
+              className="checkbox__label"
+              style={{ color: "grey", border: "none" }}
+            >Code layout +100$</label>
           </div>
         </div>
       </div>

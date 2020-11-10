@@ -29,7 +29,7 @@ const theme = createMuiTheme({
 
 export default function Result() {
   const styles = useStyles();
-  const { data, setValues } = useData();
+  const { data } = useData();
 
   const total = () => {
     return (
